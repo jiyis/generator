@@ -1,10 +1,10 @@
 <?php
 
-namespace InfyOm\Generator\Commands\Common;
+namespace Jiyis\Generator\Commands\Common;
 
-use InfyOm\Generator\Commands\BaseCommand;
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Generators\MigrationGenerator;
+use Jiyis\Generator\Commands\BaseCommand;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Generators\MigrationGenerator;
 
 class MigrationGeneratorCommand extends BaseCommand
 {

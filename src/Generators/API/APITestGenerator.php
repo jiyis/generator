@@ -1,11 +1,11 @@
 <?php
 
-namespace InfyOm\Generator\Generators\API;
+namespace Jiyis\Generator\Generators\API;
 
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Generators\BaseGenerator;
-use InfyOm\Generator\Utils\FileUtil;
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Generators\BaseGenerator;
+use Jiyis\Generator\Utils\FileUtil;
+use Jiyis\Generator\Utils\TemplateUtil;
 
 class APITestGenerator extends BaseGenerator
 {

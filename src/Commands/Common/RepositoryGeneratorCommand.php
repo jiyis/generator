@@ -1,10 +1,10 @@
 <?php
 
-namespace InfyOm\Generator\Commands\Common;
+namespace Jiyis\Generator\Commands\Common;
 
-use InfyOm\Generator\Commands\BaseCommand;
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Generators\RepositoryGenerator;
+use Jiyis\Generator\Commands\BaseCommand;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Generators\RepositoryGenerator;
 
 class RepositoryGeneratorCommand extends BaseCommand
 {

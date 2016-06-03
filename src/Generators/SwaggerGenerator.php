@@ -1,8 +1,8 @@
 <?php
 
-namespace InfyOm\Generator\Generators;
+namespace Jiyis\Generator\Generators;
 
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Utils\TemplateUtil;
 
 class SwaggerGenerator
 {

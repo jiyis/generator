@@ -1,11 +1,11 @@
 <?php
 
-namespace InfyOm\Generator\Common;
+namespace Jiyis\Generator\Common;
 
 use Exception;
 use Illuminate\Console\Command;
-use InfyOm\Generator\Utils\GeneratorFieldsInputUtil;
-use InfyOm\Generator\Utils\TableFieldsGenerator;
+use Jiyis\Generator\Utils\GeneratorFieldsInputUtil;
+use Jiyis\Generator\Utils\TableFieldsGenerator;
 
 class CommandData
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace InfyOm\Generator\Generators\Scaffold;
+namespace Jiyis\Generator\Generators\Scaffold;
 
 use Illuminate\Support\Str;
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Generators\BaseGenerator;
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Generators\BaseGenerator;
+use Jiyis\Generator\Utils\TemplateUtil;
 
 class MenuGenerator extends BaseGenerator
 {

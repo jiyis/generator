@@ -1,6 +1,6 @@
 <?php
 
-namespace InfyOm\Generator\Utils;
+namespace Jiyis\Generator\Utils;
 
 class ResponseUtil
 {

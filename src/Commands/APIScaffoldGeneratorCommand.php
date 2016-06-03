@@ -1,8 +1,8 @@
 <?php
 
-namespace InfyOm\Generator\Commands;
+namespace Jiyis\Generator\Commands;
 
-use InfyOm\Generator\Common\CommandData;
+use Jiyis\Generator\Common\CommandData;
 
 class APIScaffoldGeneratorCommand extends BaseCommand
 {

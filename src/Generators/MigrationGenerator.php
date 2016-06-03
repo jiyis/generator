@@ -1,13 +1,13 @@
 <?php
 
-namespace InfyOm\Generator\Generators;
+namespace Jiyis\Generator\Generators;
 
 use File;
 use Illuminate\Support\Str;
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Utils\FileUtil;
-use InfyOm\Generator\Utils\SchemaUtil;
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Utils\FileUtil;
+use Jiyis\Generator\Utils\SchemaUtil;
+use Jiyis\Generator\Utils\TemplateUtil;
 use SplFileInfo;
 
 class MigrationGenerator extends BaseGenerator

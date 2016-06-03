@@ -2,7 +2,7 @@
 
 namespace $NAMESPACE_BASE_CONTROLLER$;
 
-use InfyOm\Generator\Utils\ResponseUtil;
+use Jiyis\Generator\Utils\ResponseUtil;
 use Response;
 
 /**

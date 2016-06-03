@@ -1,11 +1,11 @@
 <?php
 
-namespace InfyOm\Generator\Generators\API;
+namespace Jiyis\Generator\Generators\API;
 
 use Illuminate\Support\Str;
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Generators\BaseGenerator;
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Generators\BaseGenerator;
+use Jiyis\Generator\Utils\TemplateUtil;
 
 class APIRoutesGenerator extends BaseGenerator
 {

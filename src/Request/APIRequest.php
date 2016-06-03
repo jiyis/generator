@@ -1,9 +1,9 @@
 <?php
 
-namespace InfyOm\Generator\Request;
+namespace Jiyis\Generator\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
-use InfyOm\Generator\Utils\ResponseUtil;
+use Jiyis\Generator\Utils\ResponseUtil;
 use Response;
 
 class APIRequest extends FormRequest

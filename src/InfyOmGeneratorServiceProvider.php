@@ -1,24 +1,24 @@
 <?php
 
-namespace InfyOm\Generator;
+namespace Jiyis\Generator;
 
 use Illuminate\Support\ServiceProvider;
-use InfyOm\Generator\Commands\API\APIControllerGeneratorCommand;
-use InfyOm\Generator\Commands\API\APIGeneratorCommand;
-use InfyOm\Generator\Commands\API\APIRequestsGeneratorCommand;
-use InfyOm\Generator\Commands\API\TestsGeneratorCommand;
-use InfyOm\Generator\Commands\APIScaffoldGeneratorCommand;
-use InfyOm\Generator\Commands\Common\MigrationGeneratorCommand;
-use InfyOm\Generator\Commands\Common\ModelGeneratorCommand;
-use InfyOm\Generator\Commands\Common\RepositoryGeneratorCommand;
-use InfyOm\Generator\Commands\Publish\GeneratorPublishCommand;
-use InfyOm\Generator\Commands\Publish\LayoutPublishCommand;
-use InfyOm\Generator\Commands\Publish\PublishTemplateCommand;
-use InfyOm\Generator\Commands\RollbackGeneratorCommand;
-use InfyOm\Generator\Commands\Scaffold\ControllerGeneratorCommand;
-use InfyOm\Generator\Commands\Scaffold\RequestsGeneratorCommand;
-use InfyOm\Generator\Commands\Scaffold\ScaffoldGeneratorCommand;
-use InfyOm\Generator\Commands\Scaffold\ViewsGeneratorCommand;
+use Jiyis\Generator\Commands\API\APIControllerGeneratorCommand;
+use Jiyis\Generator\Commands\API\APIGeneratorCommand;
+use Jiyis\Generator\Commands\API\APIRequestsGeneratorCommand;
+use Jiyis\Generator\Commands\API\TestsGeneratorCommand;
+use Jiyis\Generator\Commands\APIScaffoldGeneratorCommand;
+use Jiyis\Generator\Commands\Common\MigrationGeneratorCommand;
+use Jiyis\Generator\Commands\Common\ModelGeneratorCommand;
+use Jiyis\Generator\Commands\Common\RepositoryGeneratorCommand;
+use Jiyis\Generator\Commands\Publish\GeneratorPublishCommand;
+use Jiyis\Generator\Commands\Publish\LayoutPublishCommand;
+use Jiyis\Generator\Commands\Publish\PublishTemplateCommand;
+use Jiyis\Generator\Commands\RollbackGeneratorCommand;
+use Jiyis\Generator\Commands\Scaffold\ControllerGeneratorCommand;
+use Jiyis\Generator\Commands\Scaffold\RequestsGeneratorCommand;
+use Jiyis\Generator\Commands\Scaffold\ScaffoldGeneratorCommand;
+use Jiyis\Generator\Commands\Scaffold\ViewsGeneratorCommand;
 
 class InfyOmGeneratorServiceProvider extends ServiceProvider
 {

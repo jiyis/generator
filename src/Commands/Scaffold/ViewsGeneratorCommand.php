@@ -1,10 +1,10 @@
 <?php
 
-namespace InfyOm\Generator\Commands\Scaffold;
+namespace Jiyis\Generator\Commands\Scaffold;
 
-use InfyOm\Generator\Commands\BaseCommand;
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Generators\Scaffold\ViewGenerator;
+use Jiyis\Generator\Commands\BaseCommand;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Generators\Scaffold\ViewGenerator;
 
 class ViewsGeneratorCommand extends BaseCommand
 {

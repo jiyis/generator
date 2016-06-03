@@ -1,11 +1,11 @@
 <?php
 
-namespace InfyOm\Generator\Generators;
+namespace Jiyis\Generator\Generators;
 
-use InfyOm\Generator\Common\CommandData;
-use InfyOm\Generator\Utils\FileUtil;
-use InfyOm\Generator\Utils\TableFieldsGenerator;
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Common\CommandData;
+use Jiyis\Generator\Utils\FileUtil;
+use Jiyis\Generator\Utils\TableFieldsGenerator;
+use Jiyis\Generator\Utils\TemplateUtil;
 
 class ModelGenerator extends BaseGenerator
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace InfyOm\Generator\Commands\Publish;
+namespace Jiyis\Generator\Commands\Publish;
 
-use InfyOm\Generator\Utils\FileUtil;
-use InfyOm\Generator\Utils\TemplateUtil;
+use Jiyis\Generator\Utils\FileUtil;
+use Jiyis\Generator\Utils\TemplateUtil;
 
 class LayoutPublishCommand extends PublishBaseCommand
 {
