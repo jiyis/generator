@@ -9,7 +9,7 @@ class PublishTemplateCommand extends PublishBaseCommand
      *
      * @var string
      */
-    protected $name = 'infyom.publish:templates';
+    protected $name = 'jiyis.publish:templates';
 
     /**
      * The console command description.
@@ -28,8 +28,8 @@ class PublishTemplateCommand extends PublishBaseCommand
     public function handle()
     {
         $this->templatesDir = config(
-            'infyom.laravel_generator.path.templates_dir',
-            base_path('resources/infyom/infyom-generator-templates/')
+            'jiyis.laravel_generator.path.templates_dir',
+            base_path('resources/jiyis/jiyis-generator-templates/')
         );
 
         if ($this->publishGeneratorTemplates()) {
@@ -44,7 +44,7 @@ class PublishTemplateCommand extends PublishBaseCommand
     {
         $templatesPath = __DIR__.'/../../../templates';
 
-        return $this->publishDirectory($templatesPath, $this->templatesDir, 'infyom-generator-templates');
+        return $this->publishDirectory($templatesPath, $this->templatesDir, 'jiyis-generator-templates');
     }
 
     /**
@@ -52,11 +52,11 @@ class PublishTemplateCommand extends PublishBaseCommand
      */
     public function publishScaffoldTemplates()
     {
-        $templateType = config('infyom.laravel_generator.templates', 'core-templates');
+        $templateType = config('jiyis.laravel_generator.templates', 'core-templates');
 
-        $templatesPath = base_path('vendor/infyomlabs/'.$templateType.'/templates/scaffold');
+        $templatesPath = base_path('vendor/jiyislabs/'.$templateType.'/templates/scaffold');
 
-        return $this->publishDirectory($templatesPath, $this->templatesDir.'/scaffold', 'infyom-generator-templates/scaffold', true);
+        return $this->publishDirectory($templatesPath, $this->templatesDir.'/scaffold', 'jiyis-generator-templates/scaffold', true);
     }
 
     /**

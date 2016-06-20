@@ -12,7 +12,7 @@ class ScaffoldGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'infyom:scaffold';
+    protected $name = 'jiyis:scaffold';
 
     /**
      * The console command description.

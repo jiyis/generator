@@ -9,8 +9,8 @@ class TemplateUtil
         $templateName = str_replace('.', '/', $templateName);
 
         $templatesPath = config(
-            'infyom.laravel_generator.path.templates_dir',
-            base_path('resources/infyom/infyom-generator-templates/')
+            'jiyis.laravel_generator.path.templates_dir',
+            base_path('resources/jiyis/jiyis-generator-templates/')
         );
 
         $path = $templatesPath.$templateName.'.stub';
@@ -19,7 +19,7 @@ class TemplateUtil
             return file_get_contents($path);
         }
 
-        $path = base_path('vendor/infyomlabs/'.$templateType.'/templates/'.$templateName.'.stub');
+        $path = base_path('vendor/jiyislabs/'.$templateType.'/templates/'.$templateName.'.stub');
 
         return file_get_contents($path);
     }

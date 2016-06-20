@@ -16,7 +16,7 @@ class TableFieldsGenerator
 
         $primaryKey = static::getPrimaryKeyFromTable($tableName);
         $timestamps = static::getTimestampFieldNames();
-        $defaultSearchable = config('infyom.laravel_generator.options.tables_searchable_default', false);
+        $defaultSearchable = config('jiyis.laravel_generator.options.tables_searchable_default', false);
 
         $fields = [];
 
@@ -133,12 +133,12 @@ class TableFieldsGenerator
      */
     public static function getTimestampFieldNames()
     {
-        if (!config('infyom.laravel_generator.timestamps.enabled', true)) {
+        if (!config('jiyis.laravel_generator.timestamps.enabled', true)) {
             return [];
         }
 
-        $createdAtName = config('infyom.laravel_generator.timestamps.created_at', 'created_at');
-        $updatedAtName = config('infyom.laravel_generator.timestamps.updated_at', 'updated_at');
+        $createdAtName = config('jiyis.laravel_generator.timestamps.created_at', 'created_at');
+        $updatedAtName = config('jiyis.laravel_generator.timestamps.updated_at', 'updated_at');
 
         return [$createdAtName, $updatedAtName];
     }

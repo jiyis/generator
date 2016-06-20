@@ -20,7 +20,7 @@ class RepositoryTestGenerator extends BaseGenerator
     public function __construct($commandData)
     {
         $this->commandData = $commandData;
-        $this->path = config('infyom.laravel_generator.path.repository_test', base_path('tests/'));
+        $this->path = config('jiyis.laravel_generator.path.repository_test', base_path('tests/'));
         $this->fileName = $this->commandData->modelName.'RepositoryTest.php';
     }
 

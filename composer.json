@@ -1,6 +1,7 @@
 {
     "name": "jiyis/laravel-generator",
     "description": "Laravel Generator For Jiyis",
+    "minimum-stability": "dev",
     "keywords": [
         "laravel",
         "api",

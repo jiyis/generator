@@ -21,7 +21,7 @@ class MigrationGenerator extends BaseGenerator
     public function __construct($commandData)
     {
         $this->commandData = $commandData;
-        $this->path = config('infyom.laravel_generator.path.migration', base_path('database/migrations/'));
+        $this->path = config('jiyis.laravel_generator.path.migration', base_path('database/migrations/'));
     }
 
     public function generate()

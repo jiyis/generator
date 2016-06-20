@@ -2,24 +2,27 @@
 
 namespace $NAMESPACE_CONTROLLER$;
 
-use $NAMESPACE_REQUEST$;
-use $NAMESPACE_REQUEST$\Create$MODEL_NAME$Request;
-use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
-use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
-use $NAMESPACE_BASE_CONTROLLER$\AppBaseController as InfyOmBaseController;
+use $NAMESPACE_REQUEST$\Admin\Create$MODEL_NAME$Request;
+use $NAMESPACE_REQUEST$\Admin\Update$MODEL_NAME$Request;
+use $NAMESPACE_REPOSITORY$\Admin\$MODEL_NAME$Repository;
 use Illuminate\Http\Request;
-use Flash;
+use Breadcrumbs, Toastr, Response;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
-class $MODEL_NAME$Controller extends InfyOmBaseController
+class $MODEL_NAME$Controller extends BaseController
 {
     /** @var  $MODEL_NAME$Repository */
     private $$MODEL_NAME_CAMEL$Repository;
 
     public function __construct($MODEL_NAME$Repository $$MODEL_NAME_CAMEL$Repo)
     {
+        parent::__construct();
         $this->$MODEL_NAME_CAMEL$Repository = $$MODEL_NAME_CAMEL$Repo;
+
+        Breadcrumbs::register('admin-$MODEL_NAME_PLURAL_CAMEL$', function ($breadcrumbs) {
+            $breadcrumbs->parent('控制台');
+            $breadcrumbs->push('[$MODEL_NAME$]管理', route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+        });
     }
 
     /**
@@ -30,6 +33,11 @@ class $MODEL_NAME$Controller extends InfyOmBaseController
      */
     public function index(Request $request)
     {
+        Breadcrumbs::register('admin-$MODEL_NAME_PLURAL_CAMEL$-index', function ($breadcrumbs) {
+            $breadcrumbs->parent('admin-$MODEL_NAME_PLURAL_CAMEL$');
+            $breadcrumbs->push('[$MODEL_NAME$]列表', route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+        });
+
         $this->$MODEL_NAME_CAMEL$Repository->pushCriteria(new RequestCriteria($request));
         $$MODEL_NAME_PLURAL_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->$RENDER_TYPE$;
 
@@ -44,6 +52,10 @@ class $MODEL_NAME$Controller extends InfyOmBaseController
      */
     public function create()
     {
+        Breadcrumbs::register('admin-$MODEL_NAME_PLURAL_CAMEL$-create', function ($breadcrumbs) {
+            $breadcrumbs->parent('admin-$MODEL_NAME_PLURAL_CAMEL$');
+            $breadcrumbs->push('新建[$MODEL_NAME$]', route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create'));
+        });
         return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create');
     }
 
@@ -60,7 +72,7 @@ class $MODEL_NAME$Controller extends InfyOmBaseController
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($input);
 
-        Flash::success('$MODEL_NAME$ saved successfully.');
+        Toastr::success('[$MODEL_NAME$]保存成功.');
 
         return redirect(route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -94,10 +106,15 @@ class $MODEL_NAME$Controller extends InfyOmBaseController
      */
     public function edit($id)
     {
+        Breadcrumbs::register('admin-$MODEL_NAME_PLURAL_CAMEL$-edit', function ($breadcrumbs) {
+            $breadcrumbs->parent('admin-$MODEL_NAME_PLURAL_CAMEL$');
+            $breadcrumbs->push('编辑[$MODEL_NAME$]', route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', ['id' => $id]));
+        });
+
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Toastr::error('$MODEL_NAME$ not found');
 
             return redirect(route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
@@ -118,14 +135,14 @@ class $MODEL_NAME$Controller extends InfyOmBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Toastr::error('[$MODEL_NAME$]不存在');
 
             return redirect(route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->update($request->all(), $id);
 
-        Flash::success('$MODEL_NAME$ updated successfully.');
+        Toastr::success('[$MODEL_NAME$]更新成功.');
 
         return redirect(route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -142,15 +159,32 @@ class $MODEL_NAME$Controller extends InfyOmBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->findWithoutFail($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME$ not found');
+            Toastr::error('$MODEL_NAME$ not found');
 
             return redirect(route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
         $this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
-        Flash::success('$MODEL_NAME$ deleted successfully.');
+        Toastr::success('$MODEL_NAME$删除成功.');
 
         return redirect(route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+
+     /**
+     * Delete multi users
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroyAll(Request $request)
+    {
+        if(!($ids = $request->get('ids', []))) {
+            return response()->json(['status' => 0, 'msg' => '请求参数错误']);
+        }
+
+        foreach($ids as $id){
+            $result = $this->$MODEL_NAME_CAMEL$Repository->delete($id);
+        }
+        return response()->json($result ? ['status' => 1] : ['status' => 0]);
     }
 }

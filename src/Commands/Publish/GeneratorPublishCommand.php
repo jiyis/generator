@@ -12,7 +12,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
      *
      * @var string
      */
-    protected $name = 'infyom:publish';
+    protected $name = 'jiyis:publish';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
     {
         $routesPath = __DIR__.'/../../../templates/api/routes/api_routes.stub';
 
-        $apiRoutesPath = config('infyom.laravel_generator.path.api_routes', app_path('Http/api_routes.php'));
+        $apiRoutesPath = config('jiyis.laravel_generator.path.api_routes', app_path('Http/api_routes.php'));
 
         $this->publishFile($routesPath, $apiRoutesPath, 'api_routes.php');
     }
@@ -51,7 +51,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
      */
     private function initAPIRoutes()
     {
-        $path = config('infyom.laravel_generator.path.routes', app_path('Http/routes.php'));
+        $path = config('jiyis.laravel_generator.path.routes', app_path('Http/routes.php'));
 
         $prompt = 'Existing routes.php file detected. Should we add an API group to the file? (y|N) :';
         if (file_exists($path) && !$this->confirmOverwrite($path, $prompt)) {
@@ -74,7 +74,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
     {
         $traitPath = __DIR__.'/../../../templates/test/api_test_trait.stub';
 
-        $testsPath = config('infyom.laravel_generator.path.api_test', base_path('tests/'));
+        $testsPath = config('jiyis.laravel_generator.path.api_test', base_path('tests/'));
 
         $this->publishFile($traitPath, $testsPath.'ApiTestTrait.php', 'ApiTestTrait.php');
 
@@ -90,7 +90,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
 
         $templateData = $this->fillTemplate($templateData);
 
-        $controllerPath = config('infyom.laravel_generator.path.controller', app_path('Http/Controllers/'));
+        $controllerPath = config('jiyis.laravel_generator.path.controller', app_path('Http/Controllers/'));
 
         $fileName = 'AppBaseController.php';
 
@@ -112,10 +112,10 @@ class GeneratorPublishCommand extends PublishBaseCommand
      */
     private function fillTemplate($templateData)
     {
-        $apiVersion = config('infyom.laravel_generator.api_version', 'v1');
-        $apiPrefix = config('infyom.laravel_generator.api_prefix', 'api');
+        $apiVersion = config('jiyis.laravel_generator.api_version', 'v1');
+        $apiPrefix = config('jiyis.laravel_generator.api_prefix', 'api');
         $apiNamespace = config(
-            'infyom.laravel_generator.namespace.api_controller',
+            'jiyis.laravel_generator.namespace.api_controller',
             'App\Http\Controllers\API'
         );
 
@@ -124,7 +124,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
         $templateData = str_replace('$API_PREFIX$', $apiPrefix, $templateData);
         $templateData = str_replace(
             '$NAMESPACE_CONTROLLER$',
-            config('infyom.laravel_generator.namespace.controller'), $templateData
+            config('jiyis.laravel_generator.namespace.controller'), $templateData
         );
 
         return $templateData;
