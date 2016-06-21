@@ -108,7 +108,7 @@ class LayoutPublishCommand extends PublishBaseCommand
         $files = $this->getViews();
 
         foreach ($files as $stub => $blade) {
-            $sourceFile = base_path('vendor/jiyislabs/'.$templateType.'/templates/scaffold/'.$stub);
+            $sourceFile = base_path('vendor/jiyis/'.$templateType.'/templates/scaffold/'.$stub);
             $destinationFile = $viewsPath.$blade;
             $this->publishFile($sourceFile, $destinationFile, $blade);
         }

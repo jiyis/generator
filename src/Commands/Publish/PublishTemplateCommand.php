@@ -54,7 +54,7 @@ class PublishTemplateCommand extends PublishBaseCommand
     {
         $templateType = config('jiyis.laravel_generator.templates', 'core-templates');
 
-        $templatesPath = base_path('vendor/jiyislabs/'.$templateType.'/templates/scaffold');
+        $templatesPath = base_path('vendor/jiyis/'.$templateType.'/templates/scaffold');
 
         return $this->publishDirectory($templatesPath, $this->templatesDir.'/scaffold', 'jiyis-generator-templates/scaffold', true);
     }
