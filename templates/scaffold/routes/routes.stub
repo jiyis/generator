@@ -1,1 +1,2 @@
-Route::resource('$ROUTE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$', '$PATH_PREFIX$$MODEL_NAME$Controller');
+Route::resource('$MODEL_NAME_PLURAL_CAMEL$', '$MODEL_NAME$Controller');
+Route::post('$MODEL_NAME_PLURAL_CAMEL$/destroyall',['as'=>'admin.$MODEL_NAME_PLURAL_CAMEL$.destroy.all','uses'=>'$MODEL_NAME$Controller@destroyAll']);

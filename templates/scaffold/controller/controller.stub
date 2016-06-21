@@ -2,9 +2,9 @@
 
 namespace $NAMESPACE_CONTROLLER$;
 
-use $NAMESPACE_REQUEST$\Admin\Create$MODEL_NAME$Request;
-use $NAMESPACE_REQUEST$\Admin\Update$MODEL_NAME$Request;
-use $NAMESPACE_REPOSITORY$\Admin\$MODEL_NAME$Repository;
+use $NAMESPACE_REQUEST$\Create$MODEL_NAME$Request;
+use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
+use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
 use Illuminate\Http\Request;
 use Breadcrumbs, Toastr, Response;
 use Prettus\Repository\Criteria\RequestCriteria;

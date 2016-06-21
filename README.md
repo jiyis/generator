@@ -1,1 +1,1 @@
-jiyis Laravel Generator
+InfyOm Laravel Generator
