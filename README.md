@@ -1,2 +1,1 @@
-InfyOm Laravel Generator
-fix some bug
+InfyOm Laravel Generator Test
