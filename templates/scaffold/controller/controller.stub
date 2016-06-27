@@ -7,7 +7,7 @@ use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
 use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
 use Illuminate\Http\Request;
 use Breadcrumbs, Toastr, Response;
-use Prettus\Repository\Criteria\RequestCriteria;
+//use Prettus\Repository\Criteria\RequestCriteria;
 
 class $MODEL_NAME$Controller extends BaseController
 {
@@ -38,7 +38,7 @@ class $MODEL_NAME$Controller extends BaseController
             $breadcrumbs->push('[$MODEL_NAME$]列表', route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         });
 
-        $this->$MODEL_NAME_CAMEL$Repository->pushCriteria(new RequestCriteria($request));
+        //$this->$MODEL_NAME_CAMEL$Repository->pushCriteria(new RequestCriteria($request));
         $$MODEL_NAME_PLURAL_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->$RENDER_TYPE$;
 
         return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index')
@@ -106,7 +106,7 @@ class $MODEL_NAME$Controller extends BaseController
      */
     public function edit($id)
     {
-        Breadcrumbs::register('admin-$MODEL_NAME_PLURAL_CAMEL$-edit', function ($breadcrumbs) {
+        Breadcrumbs::register('admin-$MODEL_NAME_PLURAL_CAMEL$-edit', function ($breadcrumbs) use ($id) {
             $breadcrumbs->parent('admin-$MODEL_NAME_PLURAL_CAMEL$');
             $breadcrumbs->push('编辑[$MODEL_NAME$]', route('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', ['id' => $id]));
         });
